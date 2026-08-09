@@ -2678,3 +2678,12 @@ DARK MODE MOBILE NAV
     background: rgba(114, 183, 176, 0.08);
 }
 }
+
+[data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+[data-theme="dark"] .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+

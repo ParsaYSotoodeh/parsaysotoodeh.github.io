@@ -394,16 +394,23 @@ if (profilePhoto && profileInfo && profileClose) {
 
 }
 
-document.querySelectorAll('.navbar .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        const navbarCollapse = document.querySelector('.navbar-collapse');
+/* =========================================
+MOBILE NAVIGATION
+========================================= */
 
-        if (navbarCollapse.classList.contains('show')) {
-            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+document.querySelectorAll(".navbar .nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+        const navbarCollapse = document.querySelector(".navbar-collapse");
 
-            if (bsCollapse) {
-                bsCollapse.hide();
-            }
+        if (!navbarCollapse) return;
+
+        navbarCollapse.classList.remove("show");
+
+        const navbarToggler = document.querySelector(".navbar-toggler");
+
+        if (navbarToggler) {
+            navbarToggler.classList.add("collapsed");
+            navbarToggler.setAttribute("aria-expanded", "false");
         }
     });
 });
